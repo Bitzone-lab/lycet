@@ -53,7 +53,7 @@ class VoidedController extends AbstractController
      */
     public function send(): Response
     {
-        return $this->document->send();
+        return $this->document->send(false);
     }
 
     /**
@@ -85,12 +85,19 @@ class VoidedController extends AbstractController
     public function status(Request $request, SeeFactory $factory): JsonResponse
     {
         $ticket = $request->query->get('ticket');
+        $filename =  $request->query->get('filename');
         if (empty($ticket)) {
             return new JsonResponse(['message' => 'Ticket Requerido'], 400);
         }
         $see = $factory->build(Voided::class, $request->query->get('ruc'));
         $result = $see->getStatus($ticket);
 
+        // Guardamos el CDR
+        $dir_to_save = "./data_sunat/";
+        if (!is_dir($dir_to_save)) {
+            mkdir($dir_to_save);
+        }
+        file_put_contents($dir_to_save.'C-'.$filename.'.zip', $result->getCdrZip());
         if ($result->isSuccess()) {
             $result->setCdrZip(base64_encode($result->getCdrZip()));
         }

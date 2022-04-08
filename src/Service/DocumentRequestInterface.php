@@ -27,8 +27,9 @@ interface DocumentRequestInterface
      * Get Result.
      *
      * @return Response
+     * @param bool $value
      */
-    public function send(): Response;
+    public function send(bool $value): Response;
 
     /**
      * Get Xml.
