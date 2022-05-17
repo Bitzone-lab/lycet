@@ -1,0 +1,8 @@
+{
+  "20000000001": {
+	  "SOL_USER": "20000000001MODDATOS",
+	  "SOL_PASS": "moddatos",
+	  "certificate": "cert.pem",
+	  "logo": "logo.png"
+  }
+}
