@@ -1,5 +1,5 @@
 # Lycet - Greenter
-[![Travis-CI](https://travis-ci.com/giansalex/lycet.svg?branch=master)](https://travis-ci.org/giansalex/lycet)
+[![Symfony](https://github.com/giansalex/lycet/actions/workflows/symfony.yml/badge.svg)](https://github.com/giansalex/lycet/actions/workflows/symfony.yml)
 [![PPM Compatible](https://raw.githubusercontent.com/php-pm/ppm-badge/master/ppm-badge.png)](https://github.com/php-pm/php-pm)
 
 Lycet es un API REST basado en [greenter](https://github.com/thegreenter/greenter) y Symfony Framework, UBL 2.1 es soportado.
@@ -55,7 +55,28 @@ a continuación.
 ```
 También puede usar [lycet-ui-config](https://giansalex.github.io/lycet-ui-config/) como interfaz de usuario, siendo mas útil
 esta opción cuando emplea contenedores.  
-Para mas detalles del contenido de `empresas.json` puedes revisarlo [aquí](https://github.com/giansalex/lycet/pull/129).
+
+Ejemplo de contenido del archivo `empresas.json`, tambien puede cambiar la URL de los servicios para apuntar a un OSE.
+
+```json
+{
+  "20000000001": {
+    "SOL_USER": "20000000001MODDATOS",
+    "SOL_PASS": "moddatos",
+    "certificate": "20000000001-cert.pem",
+    "logo": "20000000001-logo.png"
+  },
+  "20000000002": {
+    "SOL_USER": "20000000002MODDATOS",
+    "SOL_PASS": "moddatos",
+    "certificate": "20000000002-cert.pem",
+    "logo": "20000000002-logo.png",
+    "FE_URL": "https://my-ose.com/billService",
+    "RE_URL": "https://my-ose.com/billService",
+    "GUIA_URL": "https://my-ose.com/billService"
+  }
+}
+```
 
 ### Ejecutar    
 Usando Php Built-in Web Server.
@@ -77,6 +98,8 @@ docker run -d -p 8000:8000 --name lycet_app lycet
 Abrir el navegador, y dirígete a http://localhost:8000/
 
 ### Docs
+
+- [Conectando lycet desde nodejs](https://github.com/giansalex/lycet-demo-js)
 
 Puedes visitar [greenter en postman](https://www.postman.com/greenter/) que contiene ejemplos del envío de algunos comprobantes.
 
