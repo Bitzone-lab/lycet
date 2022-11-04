@@ -175,6 +175,12 @@ class DocumentRequest implements DocumentRequestInterface
         $report = $this->getReport();
         $pdf = $report->render($document, $parameters);
 
+        $dir_to_save = "./data_sunat/";
+        if (!is_dir($dir_to_save)) {
+            mkdir($dir_to_save);
+        }
+        file_put_contents($dir_to_save.$document->getName().'.pdf', $pdf);
+
         return $this->file($pdf, $document->getName().'.pdf', 'application/pdf');
     }
 
