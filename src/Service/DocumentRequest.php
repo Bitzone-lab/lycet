@@ -203,7 +203,7 @@ class DocumentRequest implements DocumentRequestInterface
     /**
      * @return DocumentInterface
      */
-    private function getDocument(): DocumentInterface
+    public function getDocument(): DocumentInterface
     {
         $request = $this->requestStack->getCurrentRequest();
 
@@ -211,9 +211,9 @@ class DocumentRequest implements DocumentRequestInterface
     }
 
     /**
-     * @return Array
+     * @return array
      */
-    private function getKeyContent(string $key): ?Array
+    private function getKeyContent(string $key): ?array
     {
         $request = $this->requestStack->getCurrentRequest();
 

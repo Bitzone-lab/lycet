@@ -90,17 +90,15 @@
         "version": "3.16.0"
     },
     "jms/serializer-bundle": {
-        "version": "3.0",
+        "version": "5.0",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "3.0",
-            "ref": "384cec52df45f3bfd46a09930d6960a58872b268"
+            "branch": "main",
+            "version": "4.0",
+            "ref": "cc04e10cf7171525b50c18b36004edf64cb478be"
         },
         "files": [
-            "./config/packages/dev/jms_serializer.yaml",
-            "./config/packages/jms_serializer.yaml",
-            "./config/packages/prod/jms_serializer.yaml"
+            "./config/packages/jms_serializer.yaml"
         ]
     },
     "mikehaertl/php-shellcommand": {
@@ -130,11 +128,8 @@
             "./config/packages/nelmio_cors.yaml"
         ]
     },
-    "paragonie/random_compat": {
-        "version": "v9.99.100"
-    },
     "php": {
-        "version": "7.2"
+        "version": "7.4"
     },
     "phpstan/phpdoc-parser": {
         "version": "1.2.0"
@@ -264,18 +259,18 @@
         ]
     },
     "symfony/phpunit-bridge": {
-        "version": "5.3",
+        "version": "5.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
-            "branch": "master",
+            "branch": "main",
             "version": "5.3",
-            "ref": "97cb3dc7b0f39c7cfc4b7553504c9d7b7795de96"
+            "ref": "819d3d2ffa4590eba0b8f4f3e5e89415ee4e45c3"
         },
         "files": [
-            "./.env.test",
-            "./bin/phpunit",
-            "./phpunit.xml.dist",
-            "./tests/bootstrap.php"
+            ".env.test",
+            "bin/phpunit",
+            "phpunit.xml.dist",
+            "tests/bootstrap.php"
         ]
     },
     "symfony/polyfill-intl-grapheme": {

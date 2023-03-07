@@ -8,6 +8,7 @@
 
 namespace App\Service;
 
+use Greenter\Model\DocumentInterface;
 use Greenter\See;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -52,4 +53,11 @@ interface DocumentRequestInterface
      * @return See
      */
     public function getSee(string $ruc): See;
+
+    /**
+     * Get parsed document.
+     *
+     * @return DocumentInterface
+     */
+    public function getDocument(): DocumentInterface;
 }
