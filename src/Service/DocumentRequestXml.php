@@ -69,6 +69,7 @@ class DocumentRequestXml implements DocumentRequestXmlInterface
                 "Codigo Error" => $result->getError()->getCode(),
                 "Mensaje Error" => $result->getError()->getMessage()
             ];
+            error_log(print_r($objeto, true));
             return $this->json($objeto, 400);
         }
         $dir_to_save = "./data_sunat/";
@@ -79,6 +80,7 @@ class DocumentRequestXml implements DocumentRequestXmlInterface
 
         $this->toBase64Zip($result);
         $xml = $see->getFactory()->getLastXml();
+        error_log(print_r($xml, true));
 
         $data = [
             'xml' => $xml,
