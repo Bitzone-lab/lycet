@@ -81,6 +81,7 @@ Ejemplo de contenido del archivo `empresas.json`, tambien puede cambiar la URL d
   }
 }
 ```
+> Para pruebas de Guia de remision, utilizar la siguiente configuración [issue#605](https://github.com/giansalex/lycet/issues/605)
 
 ### Ejecutar    
 Usando Php Built-in Web Server.
@@ -91,12 +92,16 @@ Ir a http://localhost:8000/
 
 
 ### Docker
-Deploy on Docker.
+Desplegar con Docker.
 ```
 git clone https://github.com/giansalex/lycet
 cd lycet
 docker build -t lycet .
-docker run -d -p 8000:8000 --name lycet_app lycet 
+
+# copiar certificado y logo de prueba (puedes reemplazar por uno personal)
+cp tests/Resources/* data
+# ejecutar el contenedor
+docker run -d -p 8000:8000  -v ./data:/var/www/html/data --name lycet_app lycet
 ```
 
 Abrir el navegador, y dirígete a http://localhost:8000/
